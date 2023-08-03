@@ -1,40 +1,130 @@
--- ds.page: Welcome to doc-site
+-- ds.page:
+full-width: true
 
+-- linktree: MUSKAAN VERMA
+avatar: $assets.files.assets.avatar.svg
+bg-image: $assets.files.assets.bg-image.jpg
 
-⚡️ `doc-site` will help you create a beautiful documentation site in no time.
+Lorem ipsum dolor set amet
 
-It provides out-of-the-box documentation features that can be used to create any
-kind of site(personal website, blog, etc).
+-- button: Dribble
+cta-link: /
 
-[Click here](https://fastn-community.github.io/doc-site/) to read doc-site
-documentation.
+-- button: Behnace
+cta-link: /
 
--- ds.h3: 🚀 Fast Track 
+-- button: Webflow
+cta-link: /
 
-Create your first fastn [web-site](https://fastn.com/expander/hello-world/-/build/) 
-project in just 5 minutes!
+-- button: LinkedIn
+cta-link: /
 
--- ds.h3: 🌟 Whats next?
-
-Create your first page. 
-[Click here to know more](https://fastn-community.github.io/doc-site/components/page/).
-
--- ds.h3: 👀 Want to learn more?
-
-Feel free to check [our expander course](https://fastn.com/expander/) or jump
-into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
-
-
--- ds.h3: 🎯 Used by?
-
-Our all documentation sites uses this `doc-site` theme.
-
-- [fastn.com](https://fastn.com/home/)
-- [FifthTry.com](https://www.fifthtry.com/)
-
--- ds.h2: Learn fastn and become a pro?
-
-You are one click away, just check [our documentation](https://fastn.com/) and 
-dont forget to jump into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
+-- end: linktree
 
 -- end: ds.page
+
+
+
+
+
+
+
+
+
+-- component linktree:
+caption title:
+body body:
+ftd.image-src avatar:
+optional ftd.background-image bg-image:
+children wrapper:
+
+-- ftd.column:
+width: fill-container
+background.image: $linktree.bg-image
+spacing.fixed.px: 48
+align-content: center
+padding-vertical.px: 97
+
+-- ftd.image:
+src: $linktree.avatar
+width: auto
+
+-- ftd.column:
+align-content: center
+spacing.fixed.px: 10
+
+-- ftd.text: $linktree.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text-strong
+style: medium
+
+-- ftd.text:
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+$linktree.body
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+padding-horizontal.px: 20
+children: $linktree.wrapper
+spacing.fixed.px: 12
+align-content: center
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: linktree
+
+
+
+
+
+
+
+
+
+
+-- component button:
+caption cta-text:
+string cta-link:
+
+-- ftd.column:
+background.solid: $inherited.colors.cta-tertiary.text
+width.fixed.px: 838
+width if { ftd.device == "mobile"}: fill-container
+padding.px: 24
+padding.px if { ftd.device == "mobile"}: 16
+align-content: center
+border-radius.px: 10
+shadow: $shadow-ex-light
+
+-- ftd.text: $button.cta-text
+role: $inherited.types.copy-small
+color: $inherited.colors.cta-primary.border
+style: bold
+link: $button.cta-link
+
+-- end: ftd.column
+
+-- end: button
+
+
+
+
+
+
+
+
+
+
+-- ftd.shadow shadow-ex-light:
+color: #eee
+x-offset.px: 2
+y-offset.px: 2
+blur.px: 0
+inset-body: false
+spread.px: 2
