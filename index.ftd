@@ -1,5 +1,5 @@
--- ds.page:
-full-width: true
+-- ftd.column:
+width: fill-container
 
 -- linktree: MUSKAAN VERMA
 avatar: $assets.files.assets.avatar.svg
@@ -21,7 +21,7 @@ cta-link: /index.html
 
 -- end: linktree
 
--- end: ds.page
+-- end: ftd.column
 
 
 
