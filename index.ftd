@@ -91,9 +91,13 @@ align-content: center
 -- component button:
 caption cta-text:
 string cta-link:
+boolean $hover: false
 
 -- ftd.column:
+$on-mouse-enter$: $ftd.set-bool($a = $button.hover, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.hover, v = false)
 background.solid: $inherited.colors.cta-tertiary.text
+background.solid if { button.hover }: #0591af
 width.fixed.px: 838
 width if { ftd.device == "mobile"}: fill-container
 padding.px: 24
@@ -104,7 +108,8 @@ shadow: $shadow-ex-light
 
 -- ftd.text: $button.cta-text
 role: $inherited.types.copy-small
-color: $inherited.colors.cta-primary.border
+color: #0591af
+color if { button.hover }: $inherited.colors.cta-primary.text
 style: bold
 link: $button.cta-link
 
@@ -122,9 +127,9 @@ link: $button.cta-link
 
 
 -- ftd.shadow shadow-ex-light:
-color: #eee
-x-offset.px: 2
-y-offset.px: 2
+color: #0591af
+x-offset.px: 3
+y-offset.px: 3
 blur.px: 0
 inset-body: false
-spread.px: 2
+spread.px: 1
